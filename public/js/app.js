@@ -173,19 +173,8 @@ function setDefaultEditorContent() {
 
 function initEditor() {
   window.editor = ace.edit("rubycode");
-
-  // themes
-  window.themes = [
-    "clouds", "clouds_midnight", "cobalt", "crimson_editor", "dawn", "eclipse",
-    "idle_fingers", "kr_theme", "merbivore", "merbivore_soft",
-    "mono_industrial", "solarized_dark", "solarized_light", "textmate",
-    "twilight", "vibrant_ink"
-    ]
-  window.editor.setTheme("ace/theme/merbivore");
-
-  // ruby mode
-  var RubyMode = require("ace/mode/ruby").Mode;
-  getEditor().setMode(new RubyMode());
+  window.editor.setTheme("ace/theme/ambiance");
+  getEditor().setMode("ace/mode/ruby");
 
   // use soft tabs
   getEditor().setTabSize(2);

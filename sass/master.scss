@@ -1,9 +1,13 @@
 @import 'compass';
 @import 'github_markdown';
 
+$dark_dark_background: #112;
+$dark_background: #3e475e;
+$light_background: #eee;
+
 body {
   overflow: hidden;
-  background: transparent;
+  background: #eee;
 }
 
 body:after {
@@ -20,9 +24,10 @@ body.lesson-set {
   margin: 0px 10px 0px 0px;
   overflow: auto;
   &.intro {
-    background: url("background.png") no-repeat top center;
-    margin-top: 215px;
-    background-size: cover;
+    background: url("coderdojo-logo.png") no-repeat top center;
+    margin-top: 140px;
+    background-size: contain;
+    background-color: $dark_dark_background;
 
     li {
       list-style-image: url("listicon.png");
@@ -96,13 +101,14 @@ body.lesson-set section h1 {
   bottom: 2px;
   width: 49%;
 }
-#buttons button {
-  background-color: red;
-  @include border-radius(4px);
-  @include background(linear-gradient(lighten(red, 10), lighten(red, 00)));
 
-  border: white;
-  color: #fff;
+#buttons button {
+  background-color: $dark_background;
+  @include border-radius(4px);
+  @include background(linear-gradient(lighten($dark_background, 10), lighten($dark_background, 00)));
+
+  border: $light_background;
+  color: $light_background;
   cursor: pointer;
   display: block;
   font-size: 30px;
@@ -130,16 +136,19 @@ iframe h1 {
   overflow-y: scroll;
   font-family: monospace;
   font-size: 18px;
+  background-color: #262626;
 }
 
 #stdout {
   white-space: pre-wrap;
+  color: white;
 }
 
 #stdin {
   padding: 0;
   margin: 0;
   white-space: normal;
+  color: white;
 }
 #stderr {
   white-space: pre-wrap;
@@ -154,6 +163,7 @@ iframe h1 {
 }
 
 #tabs {
+  background: $light_background;
   position: absolute;
   height: 92%;
   right: 0px;
@@ -162,6 +172,23 @@ iframe h1 {
 .ui-tabs-panel {
   height: 85%;
   position: relative;
+}
+
+.ui-widget-header {
+  background: $dark_background;
+  border: 1px solid #000;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #ddd;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: $light_background;
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+  color: $dark_background;
 }
 
 #turtle {
@@ -189,4 +216,12 @@ iframe h1 {
   float: left;
 	font-family: monospace;
 	font-size: 18px;
+}
+
+#coderdojo_welcome {
+  color: $light_background;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 14px;
 }
